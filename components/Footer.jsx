@@ -11,7 +11,7 @@ const Footer = ({ darkMode }) => {
       borderTop="2px"
       borderColor={'gray.300'}
     >
-      2022 Realtor, Inc.
+      &copy; 2022 Real Estate, Inc.
     </Box>
   );
 };
