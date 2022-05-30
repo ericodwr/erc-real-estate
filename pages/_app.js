@@ -7,7 +7,7 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
-import theme from './theme';
+import theme from '../utils/theme';
 
 function MyApp({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
