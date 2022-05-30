@@ -2,9 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Real Estate App
 
-Build by Next.Js with API from https://bayut.p.rapidapi.com__
-Using [Chakra UI](https://chakra-ui.com/) for UI Components__
-Fetching data using [Axios](https://axios-http.com/docs/intro)__
+Using Bayut API from [Rapid Api](https://rapidapi.com/apidojo/api/bayut/) <br/>
+Using [Chakra UI](https://chakra-ui.com/) for UI Components <br/>
+Fetching data using [Axios](https://axios-http.com/docs/intro) <br/>
 
 Idea Project from [Javascript Mastery](https://www.youtube.com/c/JavaScriptMastery)
 
