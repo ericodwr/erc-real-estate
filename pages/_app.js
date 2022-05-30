@@ -3,17 +3,13 @@ import Head from 'next/head';
 import NProgress from 'nprogress';
 
 import '../styles/globals.css';
-import { useState } from 'react';
 
 import Layout from '../components/Layout';
 
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import theme from './theme';
 
 function MyApp({ Component, pageProps }) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const isDarkMode = () => setDarkMode((prev) => !prev);
-
   NProgress.configure({ showSpinner: false });
   Router.events.on('routeChangeStart', () => {
     NProgress.start();
@@ -35,8 +31,9 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <ChakraProvider>
-        <Layout darkMode={darkMode} isDarkMode={isDarkMode}>
-          <Component darkMode={darkMode} {...pageProps} />
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <Layout>
+          <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
     </>

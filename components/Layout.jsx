@@ -2,7 +2,7 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import { Box, Button } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -20,10 +20,7 @@ const Layout = ({ children, isDarkMode, darkMode }) => {
           <header>
             <Navbar darkMode={darkMode} isDarkMode={isDarkMode} />
           </header>
-          <main style={{ position: 'relative' }}>
-          
-            {children}
-          </main>
+          <main style={{ position: 'relative' }}>{children}</main>
           <footer>
             <Footer darkMode={darkMode} />
           </footer>

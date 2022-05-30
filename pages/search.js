@@ -19,7 +19,6 @@ const Search = ({ properties }) => {
     <Box>
       <Flex
         cursor={'pointer'}
-        bg="gray.100"
         borderBottom={'1px'}
         borderColor="gray.200"
         p={'2'}
@@ -41,6 +40,7 @@ const Search = ({ properties }) => {
           <Property property={property} key={property.id} />
         ))}
       </Flex>
+
       {properties.length === 0 && (
         <Flex
           justifyContent={'center'}

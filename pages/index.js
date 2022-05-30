@@ -1,47 +1,10 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Flex, Box, Text, Button } from '@chakra-ui/react';
-
+import { Flex, Box } from '@chakra-ui/react';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 
 import Property from '../components/Property';
+import Banner from '../components/Banner';
 
-const Banner = ({
-  purpose,
-  imageUrl,
-  title1,
-  title2,
-  desc1,
-  desc2,
-  linkName,
-  buttonText,
-  buttonBg,
-  buttonColor,
-}) => (
-  <Flex flexWrap={'wrap'} justifyContent="center" alignItems={'center'} m="10">
-    <Image src={imageUrl} width={500} height={300} alt="Banner" />
-    <Box p={'5'}>
-      <Text color={'grey.500'} fontSize="sm" fontWeight={'medium'}>
-        {purpose}
-      </Text>
-      <Text fontSize="3xl" fontWeight={'bold'}>
-        {title1} <br /> {title2}
-      </Text>
-      <Text fontSize="lg" paddingTop={'3'} paddingBottom="3" color={'grey.700'}>
-        {desc1} <br /> {desc2}
-      </Text>
-      <Button fontSize={'xl'} bg={buttonBg} color={buttonColor}>
-        <Link href={linkName}>{buttonText}</Link>
-      </Button>
-    </Box>
-  </Flex>
-);
-
-export default function Home({
-  propertiesForRent,
-  propertiesForSale,
-  darkMode,
-}) {
+export default function Home({ propertiesForRent, propertiesForSale }) {
   return (
     <Box>
       {/* Rent Home */}
@@ -52,8 +15,6 @@ export default function Home({
         desc1={'Explore Apartments, Villas, Homes'}
         desc2="And More"
         buttonText={'Explore Renting'}
-        buttonBg={darkMode ? 'gray.600' : null}
-        buttonColor={darkMode ? 'gray.400' : null}
         linkName={'/search?purpose=for-rent'}
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
       />
@@ -63,7 +24,6 @@ export default function Home({
           <Property property={property} key={property.id} />
         ))}
       </Flex>
-
       {/* Buy Home */}
       <Banner
         purpose={'BUY A HOME'}
@@ -72,8 +32,6 @@ export default function Home({
         desc1={'Explore Apartments, Villas, Homes'}
         desc2="And More"
         buttonText={'Explore Buying'}
-        buttonBg={darkMode ? 'gray.600' : null}
-        buttonColor={darkMode ? 'gray.400' : null}
         linkName={'/search?purpose=for-sale'}
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
